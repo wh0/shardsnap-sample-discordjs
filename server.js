@@ -8,7 +8,7 @@ const config = {
   token: process.env.DISCORD_TOKEN,
   intents: Discord.Intents.FLAGS.GUILD_MESSAGES | Discord.Intents.FLAGS.DIRECT_MESSAGES,
   criteria: {
-    // corresponds to what we declared in the gateway, but further filters out messages like
+    // corresponds to what we declared in the intents, but further filters out messages like
     // READY, CHANNEL_CREATE, and MESSAGE_UPDATE
     t: 'MESSAGE_CREATE',
     // ignore messages from self and other bots
