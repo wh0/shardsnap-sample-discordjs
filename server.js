@@ -12,14 +12,14 @@ const config = {
     // READY, CHANNEL_CREATE, and MESSAGE_UPDATE
     t: 'MESSAGE_CREATE',
     // ignore messages from self and other bots
-    $not: { 'd.author.bot': true },
+    $not: {'d.author.bot': true},
     $or: [
       // DMs
-      { 'd.guild_id': { $exists: false } },
+      {'d.guild_id': {$exists: false}},
       // mentions
-      { 'd.mentions': { $elemMatch: { id: process.env.BOT_USER_ID } } },
+      {'d.mentions': {$elemMatch: {id: process.env.BOT_USER_ID}}},
       // prefix
-      { 'd.content': { $regex: '^!' } },
+      {'d.content': {$regex: '^!'}},
     ],
   },
   dst: 'wss://' + process.env.PROJECT_DOMAIN + '.glitch.me/dcc/v1/any',
