@@ -45,6 +45,7 @@ function logReject(p) {
   });
 }
 
+// discord.js will surreptitiously take the token from the DISCORD_TOKEN environment variable.
 const bot = new Discord.Client();
 bot.on(Discord.Constants.Events.DEBUG, (info) => {
   console.log('bot debug', info);
