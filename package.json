@@ -5,6 +5,6 @@
   },
   "dependencies": {
     "dcc-client": "^0.1.0",
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.4.0"
   }
 }
