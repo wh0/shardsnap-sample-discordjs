@@ -1,6 +1,6 @@
 dependencies:
-  dcc-client: 0.1.0
-  discord.js: 12.4.1
+  dcc-client: 0.1.1
+  discord.js: 12.5.3
 packages:
   /@discordjs/collection/0.1.6:
     dev: false
@@ -10,7 +10,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.27
+      mime-types: 2.1.30
     dev: false
     engines:
       node: '>= 6'
@@ -36,68 +36,68 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
-  /dcc-client/0.1.0:
+  /dcc-client/0.1.1:
     dependencies:
-      ws: 7.3.1
+      ws: 7.4.6
     dev: false
     resolution:
-      integrity: sha512-RkoCzT3F3N2bg6oe45hA0hOJW1Kud9YrBstJEoQx2+k80phsOzRm1M4p/6CwXYreA/dY9ot0NAvgW84g1wuAiQ==
+      integrity: sha512-AlSLVhukRkG61XK0naHg6MeoIewvxCpZTRFbtK0BXtnkdPTacSTZjKrRO2wsaq2In08i6FAPzm0ApgGANl2wCg==
   /delayed-stream/1.0.0:
     dev: false
     engines:
       node: '>=0.4.0'
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
-  /discord.js/12.4.1:
+  /discord.js/12.5.3:
     dependencies:
       '@discordjs/collection': 0.1.6
       '@discordjs/form-data': 3.0.1
       abort-controller: 3.0.0
       node-fetch: 2.6.1
-      prism-media: 1.2.2
+      prism-media: 1.2.9
       setimmediate: 1.0.5
       tweetnacl: 1.0.3
-      ws: 7.3.1
+      ws: 7.4.6
     dev: false
     engines:
       node: '>=12.0.0'
     resolution:
-      integrity: sha512-KxOB8LOAN3GmrvkD6a6Fr1nlfArIFZ+q7Uqg4T/5duB90GZy9a0/Py2E+Y+eHKP6ZUCR2mbNMLCcHGjahiaNqA==
+      integrity: sha512-D3nkOa/pCkNyn6jLZnAiJApw2N9XrIsXUAdThf01i7yrEuqUmDGc7/CexVWwEcgbQR97XQ+mcnqJpmJ/92B4Aw==
   /event-target-shim/5.0.1:
     dev: false
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
-  /mime-db/1.44.0:
+  /mime-db/1.47.0:
     dev: false
     engines:
       node: '>= 0.6'
     resolution:
-      integrity: sha512-/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZGJAZ/6lkKCitSc/Nmpg==
-  /mime-types/2.1.27:
+      integrity: sha512-QBmA/G2y+IfeS4oktet3qRZ+P5kPhCKRXxXnQEudYqUaEioAU1/Lq2us3D/t1Jfo4hE9REQPrbB7K5sOczJVIw==
+  /mime-types/2.1.30:
     dependencies:
-      mime-db: 1.44.0
+      mime-db: 1.47.0
     dev: false
     engines:
       node: '>= 0.6'
     resolution:
-      integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
+      integrity: sha512-crmjA4bLtR8m9qLpHvgxSChT+XoSlZi8J4n/aIdn3z92e/U47Z0V/yl+Wh9W046GgFVAmoNR/fmdbZYcSSIUeg==
   /node-fetch/2.6.1:
     dev: false
     engines:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
-  /prism-media/1.2.2:
+  /prism-media/1.2.9:
     dev: false
     peerDependencies:
-      '@discordjs/opus': ^0.1.0
-      ffmpeg-static: ^2.4.0 || ^3.0.0
-      node-opus: ^0.3.1
-      opusscript: ^0.0.6
+      '@discordjs/opus': ^0.5.0
+      ffmpeg-static: ^4.2.7 || ^3.0.0 || ^2.4.0
+      node-opus: ^0.3.3
+      opusscript: ^0.0.8
     resolution:
-      integrity: sha512-I+nkWY212lJ500jLe4tN9tWO7nRiBAVdMv76P9kffZjYhw20raMlW1HSSvS+MLXC9MmbNZCazMrAr+5jEEgTuw==
+      integrity: sha512-UHCYuqHipbTR1ZsXr5eg4JUmHER8Ss4YEb9Azn+9zzJ7/jlTtD1h0lc4g6tNx3eMlB8Mp6bfll0LPMAV4R6r3Q==
   /setimmediate/1.0.5:
     dev: false
     resolution:
@@ -106,7 +106,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
-  /ws/7.3.1:
+  /ws/7.4.6:
     dev: false
     engines:
       node: '>=8.3.0'
@@ -114,10 +114,10 @@ packages:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
     resolution:
-      integrity: sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
+      integrity: sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  dcc-client: ^0.1.0
+  dcc-client: ^0.1.1
   discord.js: ^12.4.0
