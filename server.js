@@ -1,6 +1,6 @@
 const http = require('http');
 
-const dcc = require('dcc-client');
+const shardsnap = require('shardsnap');
 const Discord = require('discord.js');
 
 const config = {
@@ -22,8 +22,8 @@ const config = {
       {'d.content': {$regex: '^!'}},
     ],
   },
-  dst: 'wss://' + process.env.PROJECT_DOMAIN + '.glitch.me/dcc/v1/any',
-  clientSecret: process.env.DCC_SECRET,
+  dst: 'wss://' + process.env.PROJECT_DOMAIN + '.glitch.me/shardsnap/v1/any',
+  clientSecret: process.env.SHARDSNAP_SECRET,
   endpoint: 'https://ocdcc.wh00.ml',
 };
 
@@ -57,8 +57,8 @@ bot.on(Discord.Constants.Events.ERROR, (error) => {
   console.error('bot error', error);
 });
 
-const client = new dcc.Client(config.alias, config.clientSecret, {
-  path: '/dcc/v1/any',
+const client = new shardsnap.Client(config.alias, config.clientSecret, {
+  path: '/shardsnap/v1/any',
   server,
 });
 client.on('dispatch', (packet) => {
@@ -95,7 +95,7 @@ client.on('dispatch', (packet) => {
 
 server.listen(process.env.PORT, () => {
   console.log('listening', process.env.PORT);
-  dcc.register(config).then(() => {
+  shardsnap.register(config).then(() => {
     console.log('register ok');
   }).catch((e) => {
     console.error('register failed', e);
