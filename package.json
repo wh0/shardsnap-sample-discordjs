@@ -4,10 +4,10 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "shardsnap": "^0.2.0",
+    "shardsnap": "^0.2.1",
     "discord.js": "^12.4.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   }
 }
