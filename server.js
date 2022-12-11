@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 const config = {
   alias: process.env.PROJECT_DOMAIN,
   token: process.env.DISCORD_TOKEN,
-  intents: Discord.Intents.FLAGS.GUILD_MESSAGES | Discord.Intents.FLAGS.DIRECT_MESSAGES,
+  intents: Discord.GatewayIntentBits.GuildMessages | Discord.GatewayIntentBits.DirectMessages,
   criteria: {
     // corresponds to what we declared in the intents, but further filters out messages like
     // READY, CHANNEL_CREATE, and MESSAGE_UPDATE
@@ -46,16 +46,19 @@ function logReject(p) {
 }
 
 // discord.js will surreptitiously take the token from the DISCORD_TOKEN environment variable.
-const bot = new Discord.Client();
-bot.on(Discord.Constants.Events.DEBUG, (info) => {
+// discord.js Client constructor validates that intents option is present, but we won't connect, so we won't use it.
+const bot = new Discord.Client({intents: 0});
+bot.on(Discord.Events.Debug, (info) => {
   console.log('bot debug', info);
 });
-bot.on(Discord.Constants.Events.WARN, (info) => {
+bot.on(Discord.Events.Warn, (info) => {
   console.warn('bot warn', info);
 });
-bot.on(Discord.Constants.Events.ERROR, (error) => {
+bot.on(Discord.Events.Error, (error) => {
   console.error('bot error', error);
 });
+// discord.js normally sets this in login(), but we won't call that, so do it manually.
+bot.rest.setToken(bot.token);
 
 const client = new shardsnap.Client(config.alias, config.clientSecret, {
   path: '/shardsnap/v1/any',
@@ -64,22 +67,21 @@ const client = new shardsnap.Client(config.alias, config.clientSecret, {
 client.on('dispatch', (packet) => {
   let channel;
   if ('guild_id' in packet.d) {
-    const guild = bot.guilds.add({
+    const guild = bot.guilds._add({
       id: packet.d.guild_id,
     });
-    guild.available = true;
-    channel = bot.channels.add({
+    channel = bot.channels._add({
       id: packet.d.channel_id,
       guild_id: packet.d.guild_id,
-      type: Discord.Constants.ChannelTypes.TEXT,
+      type: Discord.ChannelType.GuildText,
     });
   } else {
-    channel = bot.channels.add({
+    channel = bot.channels._add({
       id: packet.d.channel_id,
-      type: Discord.Constants.ChannelTypes.DM,
+      type: Discord.ChannelType.DM,
     });
   }
-  const message = channel.messages.add(packet.d);
+  const message = channel.messages._add(packet.d);
 
   if (message.content.startsWith('!ping')) {
     logReject(message.reply('pong'));
